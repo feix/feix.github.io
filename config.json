@@ -5,7 +5,7 @@
     "homeUrl":"http://feix.github.io",
     "avatarUrl":"https://avatars.githubusercontent.com/u/4143873",
     "faviconUrl":"https://avatars.githubusercontent.com/u/4143873",
-    "singlePage": [],
+    "singlePage": ["about", "link"],
     "GMEEK_VERSION":"last",
     "email": "",
     "startSite":"12/17/2023",
