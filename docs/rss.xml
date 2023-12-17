@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Feix</title><link>http://feix.github.io</link><description>上善若水</description><copyright>Feix</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/4143873</url><title>avatar</title><link>http://feix.github.io</link></image><lastBuildDate>Sun, 17 Dec 2023 14:04:45 +0000</lastBuildDate><managingEditor>Feix</managingEditor><pubDate>Sun, 17 Dec 2023 14:04:45 +0000</pubDate><ttl>60</ttl><webMaster>Feix</webMaster><item><title>使用 M 芯片 MacBook 运行大模型</title><link>http://feix.github.io/post/shi-yong-%20M%20-xin-pian-%20MacBook%20-yun-xing-da-mo-xing.html</link><description>## 使用 llama.cpp 项目在 MackBook GPU 上运行 llama2、chinese-alpaca 等大模型&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Feix</title><link>http://feix.github.io</link><description>上善若水</description><copyright>Feix</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/4143873</url><title>avatar</title><link>http://feix.github.io</link></image><lastBuildDate>Sun, 17 Dec 2023 14:11:03 +0000</lastBuildDate><managingEditor>Feix</managingEditor><pubDate>Sun, 17 Dec 2023 14:11:03 +0000</pubDate><ttl>60</ttl><webMaster>Feix</webMaster><item><title>使用 M 芯片 MacBook 运行大模型</title><link>http://feix.github.io/post/shi-yong-%20M%20-xin-pian-%20MacBook%20-yun-xing-da-mo-xing.html</link><description>### 使用 llama.cpp 项目在 MackBook GPU 上运行 llama2、chinese-alpaca 等大模型&#13;
 &#13;
-## 编译 llama.cpp，并开启 GPU 推理&#13;
+### 编译 llama.cpp，并开启 GPU 推理&#13;
 &#13;
 &gt; git clone https://github.com/ggerganov/llama.cpp.git&#13;
 &gt; cd llama.cpp &amp;&amp; pip install -r requirements.txt&#13;
 &gt; LLAMA_METAL=1 make&#13;
 &#13;
-## 准备量化的大模型文件&#13;
+### 准备量化的大模型文件&#13;
 &#13;
 下载量化的大模型文件，放在 models/chinese-alpaca-2-7b-hf 目录下&#13;
 https://hf-mirror.com/hfl/chinese-alpaca-2-7b-gguf/blob/main/ggml-model-q4_0.gguf&#13;
 &#13;
-## 运行&#13;
+### 运行&#13;
 &#13;
 ```&#13;
 ./main -m /models/chinese-alpaca-2-7b-hf/ggml-model-q4_0.gguf \&#13;
