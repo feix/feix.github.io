@@ -17,8 +17,10 @@ https://hf-mirror.com/hfl/chinese-alpaca-2-7b-gguf/blob/main/ggml-model-q4_0.ggu
 ./main -m /models/chinese-alpaca-2-7b-hf/ggml-model-q4_0.gguf \
 --color -i -c 2048 -t 8 --temp 0.5 --top_k 40 --top_p 0.9 --repeat_penalty 1.1 \
 --in-prefix-bos -p "You are a helpful assistant. 你是一个乐于助人的助手。 你好，"
+```
 
 ### 示例
+
 ```
 Log start
 main: build = 1620 (fe680e3)
@@ -416,10 +418,10 @@ generate: n_ctx = 2048, n_batch = 512, n_predict = -1, n_keep = 0
  - If you want to submit another line, end your input with '\'.
 
  You are a helpful assistant. 你是一个乐于助人的助手。
+```
 
-```
 <img width="362" alt="M1大模型" src="https://github.com/feix/feix.github.io/assets/4143873/9cd7a2df-1a78-40c1-b250-f550e3a83bcc">
-```
+
 
 参考：
 1. https://til.simonwillison.net/llms/llama-7b-m2
