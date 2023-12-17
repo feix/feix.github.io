@@ -14,7 +14,7 @@
     </script>
     
 <title>使用 M 芯片 MacBook 运行大模型</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 </head>
 <style>
@@ -69,7 +69,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
     <div id="content">
 <div class="markdown-body" id="postBody">
-<h3>使用 llama.cpp 项目在 MackBook GPU 上运行 llama2、chinese-alpaca 等大模型</h3>
+<p>使用 llama.cpp 项目在 MackBook GPU 上运行 llama2、chinese-alpaca 等大模型</p>
 <h3>编译 llama.cpp，并开启 GPU 推理</h3>
 <blockquote>
 <p>git clone <a href="https://github.com/ggerganov/llama.cpp.git">https://github.com/ggerganov/llama.cpp.git</a><br>
@@ -80,14 +80,13 @@ LLAMA_METAL=1 make</p>
 <p>下载量化的大模型文件，放在 models/chinese-alpaca-2-7b-hf 目录下<br>
 <a href="https://hf-mirror.com/hfl/chinese-alpaca-2-7b-gguf/blob/main/ggml-model-q4_0.gguf" rel="nofollow">https://hf-mirror.com/hfl/chinese-alpaca-2-7b-gguf/blob/main/ggml-model-q4_0.gguf</a></p>
 <h3>运行</h3>
-<pre class="notranslate"><code class="notranslate">./main -m /models/chinese-alpaca-2-7b-hf/ggml-model-q4_0.gguf \
+<div class="highlight highlight-source-shell"><pre class="notranslate">./main -m /models/chinese-alpaca-2-7b-hf/ggml-model-q4_0.gguf \
 --color -i -c 2048 -t 8 --temp 0.5 --top_k 40 --top_p 0.9 --repeat_penalty 1.1 \
---in-prefix-bos -p "You are a helpful assistant. 你是一个乐于助人的助手。 你好，"
-</code></pre>
+--in-prefix-bos -p <span class="pl-s"><span class="pl-pds">"</span>You are a helpful assistant. 你是一个乐于助人的助手。 你好，<span class="pl-pds">"</span></span></pre></div>
 <h3>示例</h3>
-<pre class="notranslate"><code class="notranslate">Log start
+<div class="highlight highlight-source-shell"><pre class="notranslate">Log start
 main: build = 1620 (fe680e3)
-main: built with Apple clang version 15.0.0 (clang-1500.0.40.1) for arm64-apple-darwin23.1.0
+main: built with Apple clang version 15.0.0 (clang-1500.0.40.1) <span class="pl-k">for</span> arm64-apple-darwin23.1.0
 main: seed  = 1702783355
 llama_model_loader: loaded meta data with 19 key-value pairs and 291 tensors from ./models/chinese-alpaca-2-7b-hf/ggml-model-q4_0.gguf (version GGUF V3 (latest))
 llama_model_loader: - tensor    0:                token_embd.weight q4_0     [  4096, 55296,     1,     1 ]
@@ -381,7 +380,7 @@ llama_model_loader: - tensor  287:          blk.31.attn_norm.weight f32      [  
 llama_model_loader: - tensor  288:           blk.31.ffn_norm.weight f32      [  4096,     1,     1,     1 ]
 llama_model_loader: - tensor  289:               output_norm.weight f32      [  4096,     1,     1,     1 ]
 llama_model_loader: - tensor  290:                    output.weight q6_K     [  4096, 55296,     1,     1 ]
-llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides <span class="pl-k">do</span> not apply <span class="pl-k">in</span> this output.
 llama_model_loader: - kv   0:                       general.architecture str              = llama
 llama_model_loader: - kv   1:                               general.name str              = LLaMA v2
 llama_model_loader: - kv   2:                       llama.context_length u32              = 4096
@@ -394,94 +393,93 @@ llama_model_loader: - kv   8:              llama.attention.head_count_kv u32    
 llama_model_loader: - kv   9:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
 llama_model_loader: - kv  10:                          general.file_type u32              = 2
 llama_model_loader: - kv  11:                       tokenizer.ggml.model str              = llama
-llama_model_loader: - kv  12:                      tokenizer.ggml.tokens arr[str,55296]   = ["&lt;unk&gt;", "&lt;s&gt;", "&lt;/s&gt;", "&lt;0x00&gt;", "&lt;...
-llama_model_loader: - kv  13:                      tokenizer.ggml.scores arr[f32,55296]   = [0.000000, 0.000000, 0.000000, 0.0000...
-llama_model_loader: - kv  14:                  tokenizer.ggml.token_type arr[i32,55296]   = [2, 3, 3, 6, 6, 6, 6, 6, 6, 6, 6, 6, ...
-llama_model_loader: - kv  15:                tokenizer.ggml.bos_token_id u32              = 1
-llama_model_loader: - kv  16:                tokenizer.ggml.eos_token_id u32              = 2
-llama_model_loader: - kv  17:            tokenizer.ggml.padding_token_id u32              = 0
-llama_model_loader: - kv  18:               general.quantization_version u32              = 2
-llama_model_loader: - type  f32:   65 tensors
-llama_model_loader: - type q4_0:  225 tensors
-llama_model_loader: - type q6_K:    1 tensors
-llm_load_vocab: mismatch in special tokens definition ( 889/55296 vs 259/55296 ).
-llm_load_print_meta: format           = GGUF V3 (latest)
-llm_load_print_meta: arch             = llama
-llm_load_print_meta: vocab type       = SPM
-llm_load_print_meta: n_vocab          = 55296
-llm_load_print_meta: n_merges         = 0
-llm_load_print_meta: n_ctx_train      = 4096
-llm_load_print_meta: n_embd           = 4096
-llm_load_print_meta: n_head           = 32
-llm_load_print_meta: n_head_kv        = 32
-llm_load_print_meta: n_layer          = 32
-llm_load_print_meta: n_rot            = 128
-llm_load_print_meta: n_gqa            = 1
-llm_load_print_meta: f_norm_eps       = 0.0e+00
-llm_load_print_meta: f_norm_rms_eps   = 1.0e-05
-llm_load_print_meta: f_clamp_kqv      = 0.0e+00
-llm_load_print_meta: f_max_alibi_bias = 0.0e+00
-llm_load_print_meta: n_ff             = 11008
-llm_load_print_meta: rope scaling     = linear
-llm_load_print_meta: freq_base_train  = 10000.0
-llm_load_print_meta: freq_scale_train = 1
-llm_load_print_meta: n_yarn_orig_ctx  = 4096
-llm_load_print_meta: rope_finetuned   = unknown
-llm_load_print_meta: model type       = 7B
-llm_load_print_meta: model ftype      = mostly Q4_0
-llm_load_print_meta: model params     = 6.93 B
-llm_load_print_meta: model size       = 3.69 GiB (4.57 BPW)
-llm_load_print_meta: general.name     = LLaMA v2
-llm_load_print_meta: BOS token        = 1 '&lt;s&gt;'
-llm_load_print_meta: EOS token        = 2 '&lt;/s&gt;'
-llm_load_print_meta: UNK token        = 0 '&lt;unk&gt;'
-llm_load_print_meta: PAD token        = 0 '&lt;unk&gt;'
-llm_load_print_meta: LF token         = 13 '&lt;0x0A&gt;'
-llm_load_tensors: ggml ctx size =    0.11 MiB
-llm_load_tensors: mem required  = 3773.81 MiB
-..............................................................................................
-llama_new_context_with_model: n_ctx      = 2048
-llama_new_context_with_model: freq_base  = 10000.0
-llama_new_context_with_model: freq_scale = 1
-llama_new_context_with_model: KV self size  = 1024.00 MiB, K (f16):  512.00 MiB, V (f16):  512.00 MiB
-llama_build_graph: non-view tensors processed: 676/676
-ggml_metal_init: allocating
-ggml_metal_init: found device: Apple M1
-ggml_metal_init: picking default device: Apple M1
-ggml_metal_init: default.metallib not found, loading from source
-ggml_metal_init: GGML_METAL_PATH_RESOURCES = nil
-ggml_metal_init: loading '/Users/feix/llama.cpp/ggml-metal.metal'
-ggml_metal_init: GPU name:   Apple M1
-ggml_metal_init: GPU family: MTLGPUFamilyApple7 (1007)
-ggml_metal_init: hasUnifiedMemory              = true
-ggml_metal_init: recommendedMaxWorkingSetSize  =  5726.63 MB
-ggml_metal_init: maxTransferRate               = built-in GPU
-llama_new_context_with_model: compute buffer total size = 159.07 MiB
-llama_new_context_with_model: max tensor size =   177.19 MiB
-ggml_metal_add_buffer: allocated 'data            ' buffer, size =  3774.91 MiB, ( 3775.53 /  5461.34)
-ggml_metal_add_buffer: allocated 'kv              ' buffer, size =  1024.03 MiB, ( 4799.56 /  5461.34)
-ggml_metal_add_buffer: allocated 'alloc           ' buffer, size =   156.02 MiB, ( 4955.58 /  5461.34)
-
-system_info: n_threads = 8 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 1 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 0 | SSSE3 = 0 | VSX = 0 |
-main: interactive mode on.
-Input prefix with BOS
-sampling:
-	repeat_last_n = 64, repeat_penalty = 1.100, frequency_penalty = 0.000, presence_penalty = 0.000
-	top_k = 40, tfs_z = 1.000, top_p = 0.900, min_p = 0.050, typical_p = 1.000, temp = 0.500
-	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
-sampling order:
-CFG -&gt; Penalties -&gt; top_k -&gt; tfs_z -&gt; typical_p -&gt; top_p -&gt; min_p -&gt; temp
-generate: n_ctx = 2048, n_batch = 512, n_predict = -1, n_keep = 0
-
-
-== Running in interactive mode. ==
- - Press Ctrl+C to interject at any time.
- - Press Return to return control to LLaMa.
- - To return control without starting a new line, end your input with '/'.
- - If you want to submit another line, end your input with '\'.
-
- You are a helpful assistant. 你是一个乐于助人的助手。
-</code></pre>
+llama_model_loader: - kv  12:                      tokenizer.ggml.tokens arr[str,55296]   = [<span class="pl-s"><span class="pl-pds">"</span>&lt;unk&gt;<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>&lt;s&gt;<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>&lt;/s&gt;<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>&lt;0x00&gt;<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>&lt;...</span>
+<span class="pl-s">llama_model_loader: - kv  13:                      tokenizer.ggml.scores arr[f32,55296]   = [0.000000, 0.000000, 0.000000, 0.0000...</span>
+<span class="pl-s">llama_model_loader: - kv  14:                  tokenizer.ggml.token_type arr[i32,55296]   = [2, 3, 3, 6, 6, 6, 6, 6, 6, 6, 6, 6, ...</span>
+<span class="pl-s">llama_model_loader: - kv  15:                tokenizer.ggml.bos_token_id u32              = 1</span>
+<span class="pl-s">llama_model_loader: - kv  16:                tokenizer.ggml.eos_token_id u32              = 2</span>
+<span class="pl-s">llama_model_loader: - kv  17:            tokenizer.ggml.padding_token_id u32              = 0</span>
+<span class="pl-s">llama_model_loader: - kv  18:               general.quantization_version u32              = 2</span>
+<span class="pl-s">llama_model_loader: - type  f32:   65 tensors</span>
+<span class="pl-s">llama_model_loader: - type q4_0:  225 tensors</span>
+<span class="pl-s">llama_model_loader: - type q6_K:    1 tensors</span>
+<span class="pl-s">llm_load_vocab: mismatch in special tokens definition ( 889/55296 vs 259/55296 ).</span>
+<span class="pl-s">llm_load_print_meta: format           = GGUF V3 (latest)</span>
+<span class="pl-s">llm_load_print_meta: arch             = llama</span>
+<span class="pl-s">llm_load_print_meta: vocab type       = SPM</span>
+<span class="pl-s">llm_load_print_meta: n_vocab          = 55296</span>
+<span class="pl-s">llm_load_print_meta: n_merges         = 0</span>
+<span class="pl-s">llm_load_print_meta: n_ctx_train      = 4096</span>
+<span class="pl-s">llm_load_print_meta: n_embd           = 4096</span>
+<span class="pl-s">llm_load_print_meta: n_head           = 32</span>
+<span class="pl-s">llm_load_print_meta: n_head_kv        = 32</span>
+<span class="pl-s">llm_load_print_meta: n_layer          = 32</span>
+<span class="pl-s">llm_load_print_meta: n_rot            = 128</span>
+<span class="pl-s">llm_load_print_meta: n_gqa            = 1</span>
+<span class="pl-s">llm_load_print_meta: f_norm_eps       = 0.0e+00</span>
+<span class="pl-s">llm_load_print_meta: f_norm_rms_eps   = 1.0e-05</span>
+<span class="pl-s">llm_load_print_meta: f_clamp_kqv      = 0.0e+00</span>
+<span class="pl-s">llm_load_print_meta: f_max_alibi_bias = 0.0e+00</span>
+<span class="pl-s">llm_load_print_meta: n_ff             = 11008</span>
+<span class="pl-s">llm_load_print_meta: rope scaling     = linear</span>
+<span class="pl-s">llm_load_print_meta: freq_base_train  = 10000.0</span>
+<span class="pl-s">llm_load_print_meta: freq_scale_train = 1</span>
+<span class="pl-s">llm_load_print_meta: n_yarn_orig_ctx  = 4096</span>
+<span class="pl-s">llm_load_print_meta: rope_finetuned   = unknown</span>
+<span class="pl-s">llm_load_print_meta: model type       = 7B</span>
+<span class="pl-s">llm_load_print_meta: model ftype      = mostly Q4_0</span>
+<span class="pl-s">llm_load_print_meta: model params     = 6.93 B</span>
+<span class="pl-s">llm_load_print_meta: model size       = 3.69 GiB (4.57 BPW)</span>
+<span class="pl-s">llm_load_print_meta: general.name     = LLaMA v2</span>
+<span class="pl-s">llm_load_print_meta: BOS token        = 1 '&lt;s&gt;'</span>
+<span class="pl-s">llm_load_print_meta: EOS token        = 2 '&lt;/s&gt;'</span>
+<span class="pl-s">llm_load_print_meta: UNK token        = 0 '&lt;unk&gt;'</span>
+<span class="pl-s">llm_load_print_meta: PAD token        = 0 '&lt;unk&gt;'</span>
+<span class="pl-s">llm_load_print_meta: LF token         = 13 '&lt;0x0A&gt;'</span>
+<span class="pl-s">llm_load_tensors: ggml ctx size =    0.11 MiB</span>
+<span class="pl-s">llm_load_tensors: mem required  = 3773.81 MiB</span>
+<span class="pl-s">..............................................................................................</span>
+<span class="pl-s">llama_new_context_with_model: n_ctx      = 2048</span>
+<span class="pl-s">llama_new_context_with_model: freq_base  = 10000.0</span>
+<span class="pl-s">llama_new_context_with_model: freq_scale = 1</span>
+<span class="pl-s">llama_new_context_with_model: KV self size  = 1024.00 MiB, K (f16):  512.00 MiB, V (f16):  512.00 MiB</span>
+<span class="pl-s">llama_build_graph: non-view tensors processed: 676/676</span>
+<span class="pl-s">ggml_metal_init: allocating</span>
+<span class="pl-s">ggml_metal_init: found device: Apple M1</span>
+<span class="pl-s">ggml_metal_init: picking default device: Apple M1</span>
+<span class="pl-s">ggml_metal_init: default.metallib not found, loading from source</span>
+<span class="pl-s">ggml_metal_init: GGML_METAL_PATH_RESOURCES = nil</span>
+<span class="pl-s">ggml_metal_init: loading '/Users/feix/llama.cpp/ggml-metal.metal'</span>
+<span class="pl-s">ggml_metal_init: GPU name:   Apple M1</span>
+<span class="pl-s">ggml_metal_init: GPU family: MTLGPUFamilyApple7 (1007)</span>
+<span class="pl-s">ggml_metal_init: hasUnifiedMemory              = true</span>
+<span class="pl-s">ggml_metal_init: recommendedMaxWorkingSetSize  =  5726.63 MB</span>
+<span class="pl-s">ggml_metal_init: maxTransferRate               = built-in GPU</span>
+<span class="pl-s">llama_new_context_with_model: compute buffer total size = 159.07 MiB</span>
+<span class="pl-s">llama_new_context_with_model: max tensor size =   177.19 MiB</span>
+<span class="pl-s">ggml_metal_add_buffer: allocated 'data            ' buffer, size =  3774.91 MiB, ( 3775.53 /  5461.34)</span>
+<span class="pl-s">ggml_metal_add_buffer: allocated 'kv              ' buffer, size =  1024.03 MiB, ( 4799.56 /  5461.34)</span>
+<span class="pl-s">ggml_metal_add_buffer: allocated 'alloc           ' buffer, size =   156.02 MiB, ( 4955.58 /  5461.34)</span>
+<span class="pl-s"></span>
+<span class="pl-s">system_info: n_threads = 8 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 1 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 0 | SSSE3 = 0 | VSX = 0 |</span>
+<span class="pl-s">main: interactive mode on.</span>
+<span class="pl-s">Input prefix with BOS</span>
+<span class="pl-s">sampling:</span>
+<span class="pl-s">	repeat_last_n = 64, repeat_penalty = 1.100, frequency_penalty = 0.000, presence_penalty = 0.000</span>
+<span class="pl-s">	top_k = 40, tfs_z = 1.000, top_p = 0.900, min_p = 0.050, typical_p = 1.000, temp = 0.500</span>
+<span class="pl-s">	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000</span>
+<span class="pl-s">sampling order:</span>
+<span class="pl-s">CFG -&gt; Penalties -&gt; top_k -&gt; tfs_z -&gt; typical_p -&gt; top_p -&gt; min_p -&gt; temp</span>
+<span class="pl-s">generate: n_ctx = 2048, n_batch = 512, n_predict = -1, n_keep = 0</span>
+<span class="pl-s"></span>
+<span class="pl-s"></span>
+<span class="pl-s">== Running in interactive mode. ==</span>
+<span class="pl-s"> - Press Ctrl+C to interject at any time.</span>
+<span class="pl-s"> - Press Return to return control to LLaMa.</span>
+<span class="pl-s"> - To return control without starting a new line, end your input with '/'.</span>
+<span class="pl-s"> - If you want to submit another line, end your input with '\'.</span>
+<span class="pl-s"></span>
+<span class="pl-s"> You are a helpful assistant. 你是一个乐于助人的助手。</span></pre></div>
 <p><a target="_blank" rel="noopener noreferrer" href="https://github.com/feix/feix.github.io/assets/4143873/9cd7a2df-1a78-40c1-b250-f550e3a83bcc"><img width="362" alt="M1大模型" src="https://github.com/feix/feix.github.io/assets/4143873/9cd7a2df-1a78-40c1-b250-f550e3a83bcc" style="max-width: 100%;"></a></p>
 <p>参考：</p>
 <ol>

@@ -1,4 +1,5 @@
-### 使用 llama.cpp 项目在 MackBook GPU 上运行 llama2、chinese-alpaca 等大模型
+使用 llama.cpp 项目在 MackBook GPU 上运行 llama2、chinese-alpaca 等大模型
+
 
 ### 编译 llama.cpp，并开启 GPU 推理
 
@@ -13,7 +14,7 @@ https://hf-mirror.com/hfl/chinese-alpaca-2-7b-gguf/blob/main/ggml-model-q4_0.ggu
 
 ### 运行
 
-```
+```zsh
 ./main -m /models/chinese-alpaca-2-7b-hf/ggml-model-q4_0.gguf \
 --color -i -c 2048 -t 8 --temp 0.5 --top_k 40 --top_p 0.9 --repeat_penalty 1.1 \
 --in-prefix-bos -p "You are a helpful assistant. 你是一个乐于助人的助手。 你好，"
@@ -21,7 +22,7 @@ https://hf-mirror.com/hfl/chinese-alpaca-2-7b-gguf/blob/main/ggml-model-q4_0.ggu
 
 ### 示例
 
-```
+```zsh
 Log start
 main: build = 1620 (fe680e3)
 main: built with Apple clang version 15.0.0 (clang-1500.0.40.1) for arm64-apple-darwin23.1.0
