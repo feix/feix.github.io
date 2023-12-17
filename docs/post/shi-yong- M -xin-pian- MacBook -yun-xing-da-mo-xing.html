@@ -81,8 +81,7 @@ LLAMA_METAL=1 make</p>
 <a href="https://hf-mirror.com/hfl/chinese-alpaca-2-7b-gguf/blob/main/ggml-model-q4_0.gguf" rel="nofollow">https://hf-mirror.com/hfl/chinese-alpaca-2-7b-gguf/blob/main/ggml-model-q4_0.gguf</a></p>
 <h3>运行</h3>
 <div class="highlight highlight-source-shell"><pre class="notranslate">./main -m /models/chinese-alpaca-2-7b-hf/ggml-model-q4_0.gguf \
---color -i -c 2048 -t 8 --temp 0.5 --top_k 40 --top_p 0.9 --repeat_penalty 1.1 \
---in-prefix-bos -p <span class="pl-s"><span class="pl-pds">"</span>You are a helpful assistant. 你是一个乐于助人的助手。 你好，<span class="pl-pds">"</span></span></pre></div>
+--color -i -c 2048 -t 8 --in-prefix-bos -p <span class="pl-s"><span class="pl-pds">"</span>You are a helpful assistant. 你是一个乐于助人的助手。 你好，<span class="pl-pds">"</span></span></pre></div>
 <h3>示例</h3>
 <div class="highlight highlight-source-shell"><pre class="notranslate">Log start
 main: build = 1620 (fe680e3)

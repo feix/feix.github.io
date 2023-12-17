@@ -16,8 +16,7 @@ https://hf-mirror.com/hfl/chinese-alpaca-2-7b-gguf/blob/main/ggml-model-q4_0.ggu
 
 ```zsh
 ./main -m /models/chinese-alpaca-2-7b-hf/ggml-model-q4_0.gguf \
---color -i -c 2048 -t 8 --temp 0.5 --top_k 40 --top_p 0.9 --repeat_penalty 1.1 \
---in-prefix-bos -p "You are a helpful assistant. 你是一个乐于助人的助手。 你好，"
+--color -i -c 2048 -t 8 --in-prefix-bos -p "You are a helpful assistant. 你是一个乐于助人的助手。 你好，"
 ```
 
 ### 示例
