@@ -1,5 +1,23 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Feix</title><link>http://feix.github.io</link><description>为学日益，为道日损</description><copyright>Feix</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/4143873</url><title>avatar</title><link>http://feix.github.io</link></image><lastBuildDate>Sun, 17 Dec 2023 13:35:58 +0000</lastBuildDate><managingEditor>Feix</managingEditor><pubDate>Sun, 17 Dec 2023 13:35:58 +0000</pubDate><ttl>60</ttl><webMaster>Feix</webMaster><item><title>第一篇用 Issue 写的文章</title><link>http://feix.github.io/post/di-yi-pian-yong-%20Issue%20-xie-de-wen-zhang.html</link><description># 标题&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Feix</title><link>http://feix.github.io</link><description>上善若水</description><copyright>Feix</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/4143873</url><title>avatar</title><link>http://feix.github.io</link></image><lastBuildDate>Sun, 17 Dec 2023 14:04:45 +0000</lastBuildDate><managingEditor>Feix</managingEditor><pubDate>Sun, 17 Dec 2023 14:04:45 +0000</pubDate><ttl>60</ttl><webMaster>Feix</webMaster><item><title>使用 M 芯片 MacBook 运行大模型</title><link>http://feix.github.io/post/shi-yong-%20M%20-xin-pian-%20MacBook%20-yun-xing-da-mo-xing.html</link><description>## 使用 llama.cpp 项目在 MackBook GPU 上运行 llama2、chinese-alpaca 等大模型&#13;
+&#13;
+## 编译 llama.cpp，并开启 GPU 推理&#13;
+&#13;
+&gt; git clone https://github.com/ggerganov/llama.cpp.git&#13;
+&gt; cd llama.cpp &amp;&amp; pip install -r requirements.txt&#13;
+&gt; LLAMA_METAL=1 make&#13;
+&#13;
+## 准备量化的大模型文件&#13;
+&#13;
+下载量化的大模型文件，放在 models/chinese-alpaca-2-7b-hf 目录下&#13;
+https://hf-mirror.com/hfl/chinese-alpaca-2-7b-gguf/blob/main/ggml-model-q4_0.gguf&#13;
+&#13;
+## 运行&#13;
+&#13;
+```&#13;
+./main -m /models/chinese-alpaca-2-7b-hf/ggml-model-q4_0.gguf \&#13;
+--color -i -c 2048 -t 8 --temp 0.5 --top_k 40 --top_p 0.9 --repeat_penalty 1.1 \&#13;
+--in-prefix-bos -p "You are a helpful assistant. 你是一个乐于助人的助手。</description><guid isPermaLink="true">http://feix.github.io/post/shi-yong-%20M%20-xin-pian-%20MacBook%20-yun-xing-da-mo-xing.html</guid><pubDate>Sun, 17 Dec 2023 13:59:34 +0000</pubDate></item><item><title>第一篇用 Issue 写的文章</title><link>http://feix.github.io/post/di-yi-pian-yong-%20Issue%20-xie-de-wen-zhang.html</link><description># 标题&#13;
 ## 次级标题&#13;
 &#13;
 &gt; 引用&#13;
@@ -10,4 +28,4 @@
 &#13;
 &#13;
 &#13;
-。</description><guid isPermaLink="true">http://feix.github.io/post/di-yi-pian-yong-%20Issue%20-xie-de-wen-zhang.html</guid><pubDate>Sun, 17 Dec 2023 12:13:57 +0000</pubDate></item><item><title>链接</title><link>http://feix.github.io/post/lian-jie.html</link><description>链接。</description><guid isPermaLink="true">http://feix.github.io/post/lian-jie.html</guid><pubDate>Sun, 17 Dec 2023 13:35:30 +0000</pubDate></item><item><title>关于</title><link>http://feix.github.io/post/guan-yu.html</link><description>关于页面。</description><guid isPermaLink="true">http://feix.github.io/post/guan-yu.html</guid><pubDate>Sun, 17 Dec 2023 13:18:22 +0000</pubDate></item></channel></rss>
+。</description><guid isPermaLink="true">http://feix.github.io/post/di-yi-pian-yong-%20Issue%20-xie-de-wen-zhang.html</guid><pubDate>Sun, 17 Dec 2023 12:13:57 +0000</pubDate></item><item><title>关于</title><link>http://feix.github.io/post/guan-yu.html</link><description>关于页面。</description><guid isPermaLink="true">http://feix.github.io/post/guan-yu.html</guid><pubDate>Sun, 17 Dec 2023 13:18:22 +0000</pubDate></item><item><title>链接</title><link>http://feix.github.io/post/lian-jie.html</link><description>链接。</description><guid isPermaLink="true">http://feix.github.io/post/lian-jie.html</guid><pubDate>Sun, 17 Dec 2023 13:35:30 +0000</pubDate></item></channel></rss>
