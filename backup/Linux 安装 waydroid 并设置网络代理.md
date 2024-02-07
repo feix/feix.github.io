@@ -41,7 +41,7 @@ waydroid app install /path/to/apk
 ```
 
 ## 4. 网络代理配置
-参考 https://github.com/waydroid/waydroid/issues/870
+参考 waydroid/waydroid/issues/870
 ```
 adb shell settings put global http_proxy "ip:port"  
 cert_hash=$(openssl x509 -subject_hash_old -in ssl-proxying-certificate.pem | head -1)
