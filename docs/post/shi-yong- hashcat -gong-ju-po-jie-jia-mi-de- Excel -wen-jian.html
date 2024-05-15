@@ -9,7 +9,18 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="使用 hashcat 工具破解加密的 Excel 文件">
+<meta name="description" content="分两步
+1. 获取密码 hash
+2. 设计密码模式，利用 hashcat 碰撞密码
+3. 如果成功，密码会保存在 excel 同名的 .hash.txt 后缀文件里，最后一个「:」 后面的就是密码。">
+<meta property="og:title" content="使用 hashcat 工具破解加密的 Excel 文件">
+<meta property="og:description" content="分两步
+1. 获取密码 hash
+2. 设计密码模式，利用 hashcat 碰撞密码
+3. 如果成功，密码会保存在 excel 同名的 .hash.txt 后缀文件里，最后一个「:」 后面的就是密码。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://feix.github.io/post/shi-yong-%20hashcat%20-gong-ju-po-jie-jia-mi-de-%20Excel%20-wen-jian.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/4143873">
 <title>使用 hashcat 工具破解加密的 Excel 文件</title>
 <link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
