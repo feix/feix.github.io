@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Feix</title><link>http://feix.github.io</link><description>上善若水</description><copyright>Feix</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/4143873</url><title>avatar</title><link>http://feix.github.io</link></image><lastBuildDate>Fri, 12 Apr 2024 08:58:47 +0000</lastBuildDate><managingEditor>Feix</managingEditor><ttl>60</ttl><webMaster>Feix</webMaster><item><title>使用 hashcat 工具破解加密的 Excel 文件</title><link>http://feix.github.io/post/shi-yong-%20hashcat%20-gong-ju-po-jie-jia-mi-de-%20Excel%20-wen-jian.html</link><description>分两步&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Feix</title><link>http://feix.github.io</link><description>上善若水</description><copyright>Feix</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/4143873</url><title>avatar</title><link>http://feix.github.io</link></image><lastBuildDate>Tue, 28 May 2024 16:19:11 +0000</lastBuildDate><managingEditor>Feix</managingEditor><ttl>60</ttl><webMaster>Feix</webMaster><item><title>使用 hashcat 工具破解加密的 Excel 文件</title><link>http://feix.github.io/post/shi-yong-%20hashcat%20-gong-ju-po-jie-jia-mi-de-%20Excel%20-wen-jian.html</link><description>分两步&#13;
 1. 获取密码 hash&#13;
 2. 设计密码模式，利用 hashcat 碰撞密码&#13;
 3. 如果成功，密码会保存在 excel 同名的 .hash.txt 后缀文件里，最后一个「:」 后面的就是密码。</description><guid isPermaLink="true">http://feix.github.io/post/shi-yong-%20hashcat%20-gong-ju-po-jie-jia-mi-de-%20Excel%20-wen-jian.html</guid><pubDate>Fri, 12 Apr 2024 08:58:22 +0000</pubDate></item><item><title>Linux 安装 waydroid 并设置网络代理</title><link>http://feix.github.io/post/Linux%20-an-zhuang-%20waydroid%20-bing-she-zhi-wang-luo-dai-li.html</link><description>## 1. 安装&#13;
@@ -21,7 +21,7 @@ https://hf-mirror.com/hfl/chinese-alpaca-2-7b-gguf/blob/main/ggml-model-q4_0.ggu
 &#13;
 ```zsh&#13;
 ./main -m /models/chinese-alpaca-2-7b-hf/ggml-model-q4_0.gguf \&#13;
---color -i -c 2048 -t 8 --in-prefix-bos -p "You are a helpful assistant. 你是一个乐于助人的助手。</description><guid isPermaLink="true">http://feix.github.io/post/shi-yong-%20M%20-xin-pian-%20MacBook%20-yun-xing-da-mo-xing.html</guid><pubDate>Sun, 17 Dec 2023 13:59:34 +0000</pubDate></item><item><title>第一篇用 Issue 写的文章</title><link>http://feix.github.io/post/di-yi-pian-yong-%20Issue%20-xie-de-wen-zhang.html</link><description># 标题&#13;
+--color -i -c 2048 -t 8 --in-prefix-bos -p 'You are a helpful assistant. 你是一个乐于助人的助手。</description><guid isPermaLink="true">http://feix.github.io/post/shi-yong-%20M%20-xin-pian-%20MacBook%20-yun-xing-da-mo-xing.html</guid><pubDate>Sun, 17 Dec 2023 13:59:34 +0000</pubDate></item><item><title>第一篇用 Issue 写的文章</title><link>http://feix.github.io/post/di-yi-pian-yong-%20Issue%20-xie-de-wen-zhang.html</link><description># 标题&#13;
 ## 次级标题&#13;
 &#13;
 &gt; 引用&#13;
